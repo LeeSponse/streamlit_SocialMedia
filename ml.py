@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np 
+import time
 
 def run_ml() :
     st.subheader('정신건강 예측하기')
@@ -390,6 +391,21 @@ def run_ml() :
     #2-1. 버튼을 만들어 예측하기.
     if st.button('예측하기'):
     
+        # 로딩 텍스트와 프로그레스 바를 위한 빈 슬롯 생성
+        latest_iteration = st.empty()
+        bar = st.empty()
+
+        # 0부터 100까지 로딩
+        for i in range(100):
+            # 각 반복마다 로딩 텍스트와 프로그레스 바 업데이트
+            latest_iteration.text(f'로딩 {i+1}%')
+            bar.progress(i + 1)
+            time.sleep(0.01)
+
+        # 로딩이 끝난 후 로딩 텍스트와 프로그레스 바 제거
+        latest_iteration.empty()
+        bar.empty()
+    
         #2-2. 준비된 모델 불러오기
         NBm = joblib.load('./model/NBModel.pkl')
 
@@ -431,15 +447,15 @@ def run_ml() :
         print(y_pred)
 
         if y_pred == 0 :
-            st.subheader('당신은 소셜미디어 중독이 아닙니다.')
+            st.success('당신은 소셜미디어 중독이 아닙니다.')
             st.text(f"당신의 점수는 {total_score}점 입니다.")
             
         elif y_pred == 1 :
-            st.subheader('당신은 소셜미디어 중독이 의심됩니다.')
+            st.info('당신은 소셜미디어 중독이 의심됩니다.')
             st.text(f"당신의 점수는 {total_score}점 입니다.") 
 
         elif y_pred == 2 :
-            st.subheader('당신은 심각한 소셜미디어 중독이 의심됩니다.')
+            st.warning('당신은 심각한 소셜미디어 중독이 의심됩니다.')
             st.text(f"당신의 점수는 {total_score}점 입니다.") 
 
 
