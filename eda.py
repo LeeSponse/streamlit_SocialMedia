@@ -28,6 +28,8 @@ def run_eda() :
 
     df = pd.read_csv('./data/SoCialMediaEDA.csv')
 
+    df1 = pd.read_csv('./data/SoCialMediaML.csv')
+
     print(df)
 
     select_menu = ['데이터프레임 보기', '통계치 보기', '그래프 보기', '점수 보기', '상관계수 및 히트맵']
@@ -254,7 +256,7 @@ def run_eda() :
 
     elif choice_select == select_menu[4] :
 
-        df1 = pd.read_csv('./data/SoCialMediaML.csv')
+        
 
         df1_corr = df1.corr()
 
