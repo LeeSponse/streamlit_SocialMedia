@@ -28,7 +28,7 @@ def run_eda() :
 
     df = pd.read_csv('./data/SoCialMediaEDA.csv')
 
-    df1 = pd.read_csv('./data/SoCialMediaML.csv')
+    df1 = pd.read_csv('./data/SocialMediaML.csv')
 
     print(df)
 
