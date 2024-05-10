@@ -221,7 +221,7 @@ def run_eda() :
 
             # 첫 번째 서브플롯에 파이차트 그리기
             ax1.pie(mean_de, labels=mean_de.index, autopct='%1.1f%%', startangle=140, colors=pie_colors)
-            ax1.set_title('소셜미디어 사용 시간에 따른 자존감(열등감) 점수')
+            ax1.set_title('소셜미디어 사용 시간에 따른 우울증 점수')
 
             # 두 번째 서브플롯에 바차트 그리기 (파이차트와 동일한 색상 적용)
             mean_de.plot(kind='bar', ax=ax2, color=pie_colors)
