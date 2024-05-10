@@ -22,7 +22,7 @@ plt.rc('axes', unicode_minus=False) # 마이너스 폰트 설정
 
 def run_eda() :
     
-    st.subheader('EDA 분석')
+    st.subheader('소셜미디어 사용시간과 관련된 여러가지 EDA를 분석하여 보여드립니다.')
 
     st.write('**데이터프레임 및 통계치와 다양한 정보를 확인 할 수 있습니다.**')
 
@@ -34,7 +34,7 @@ def run_eda() :
 
     select_menu = ['데이터프레임 보기', '통계치 보기', '그래프 보기', '점수 보기', '상관계수 및 히트맵']
 
-    choice_select = st.selectbox('원하시는 항목을 선택하세요.', select_menu)
+    choice_select = st.selectbox('**원하시는 항목을 선택하세요.**', select_menu)
 
     if choice_select == select_menu[0] :
         st.write('- 최소 13세부터 최대 91세 까지의 소셜미디어 중독을 검사한 데이터입니다.')
@@ -49,7 +49,7 @@ def run_eda() :
     elif choice_select == select_menu[2] :
         radio_menu = ['하루 평균 사용시간', '성별에 따른 사용여부', '직업별 사용 여부','사용시간이 정신건강에 미치는 영향']
         sc_select = st.radio(
-        "원하시는 항목을 선택하시면 %비율 및 그래프로 보여줍니다.",
+        "**원하시는 항목을 선택하시면 %비율 및 그래프로 보여줍니다.**",
         (radio_menu))
         
         if sc_select == radio_menu[0] :
@@ -139,7 +139,7 @@ def run_eda() :
     elif choice_select == select_menu[3] :
         radio_menu = ['ADHD 점수', '불안장애 점수', '자존감(열등감) 점수','우울증 점수', '총합계 점수']
         sc_choice = st.radio(
-        "소셜미디어 사용시간에 따른 점수를 보여줍니다.",
+        "**소셜미디어 사용시간에 따른 점수를 보여줍니다.**",
         (radio_menu))
         
         if sc_choice == radio_menu[0] :
@@ -256,13 +256,12 @@ def run_eda() :
 
     elif choice_select == select_menu[4] :
 
-        
 
         df1_corr = df1.corr()
 
         radio_menu = ['상관계수', '히스토그램', '히트맵']
         sc_choice = st.radio(
-        "원하시는 항목을 선택하세요.",
+        "**클릭하시면 상관계수와 히스토그램 히트맵을 보여줍니다.**",
         (radio_menu))
 
         if sc_choice == radio_menu[0] :

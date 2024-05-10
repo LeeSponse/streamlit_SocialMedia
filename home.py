@@ -26,7 +26,7 @@ def run_home() :
         if show_button1:
 
             # 셀렉트 안에 버튼 할당하기
-            selected_option = st.radio("소셜 미디어 중독관련 기사 선택", ('1.소셜미디어로 인한 극단적 선택 기사', '2.가장 많이 사용하는 SNS 중독 기사', '3.SNS 중독이 되는 이유 기사'))
+            selected_option = st.radio("소셜 미디어 중독관련 기사 선택", ('1.소셜미디어로 인한 극단적 선택 기사', '2.가장 많이 사용하는 SNS 및 심각성 기사', '3.SNS 중독이 되는 이유 기사'))
 
             if selected_option == '1.소셜미디어로 인한 극단적 선택 기사' :
                 if st.button('기사 링크로 이동'):
@@ -35,7 +35,7 @@ def run_home() :
                     # 새 탭에서 URL 열기
                     webbrowser.open_new_tab(url)
 
-            elif selected_option == '2.가장 많이 사용하는 SNS 중독 기사':
+            elif selected_option == '2.가장 많이 사용하는 SNS 및 심각성 기사':
                 if st.button('기사 링크로 이동'):
                 # 이동할 URL
                     url = 'https://www.kyongbuk.co.kr/news/articleView.html?idxno=1059831'

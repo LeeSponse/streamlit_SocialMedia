@@ -11,7 +11,7 @@ def main() :
     st.set_page_config(layout="wide")
 
 
-    menu = ['메인페이지', ' EDA 분석 ', '정신건강 예측하기']
+    menu = ['메인페이지', ' 소셜미디어 중독 EDA 분석 ', '정신건강 예측하기']
         
     choice = st.sidebar.selectbox('메뉴', menu)
 
