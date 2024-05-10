@@ -448,15 +448,30 @@ def run_ml() :
 
         if y_pred == 0 :
             st.success('당신은 소셜미디어 중독이 아닙니다.')
-            st.text(f"당신의 점수는 {total_score}점 입니다.")
+            with st.expander('점수확인 및 평균 점수와 비교하기.'):
+                st.success(f"당신의 점수는 [60]점 만점 기준 {total_score}점 입니다.")
+                st.write(f"- 평균 ADHD 점수는 **[13]점** 입니다. 당신의 ADHD 점수는 **{Adhd_score}점** 입니다.")
+                st.write(f"- 평균 불안장애 점수는 **[6]점** 입니다. 당신의 불안장애 점수는 **{Anx_score}점** 입니다.")
+                st.write(f"- 평균 자존감(낮음) 점수는 **[8]점** 입니다. 당신의 자존감(낮음) 점수는 **{Comp_score}점** 입니다.")
+                st.write(f"- 평균 우울증 점수는 **[10]점** 입니다. 당신의 우울증 점수는 **{Dep_score}점** 입니다.")
             
         elif y_pred == 1 :
-            st.info('당신은 소셜미디어 중독이 의심됩니다.')
-            st.text(f"당신의 점수는 {total_score}점 입니다.") 
+            st.warning('당신은 소셜미디어 중독이 의심됩니다.')
+            with st.expander('점수확인 및 평균 점수와 비교하기.'):
+                st.warning(f"당신의 점수는 [60]점 만점 기준 {total_score}점 입니다.")
+                st.write(f"- 평균 ADHD 점수는 **[13]점** 입니다. 당신의 ADHD 점수는 **{Adhd_score}점** 입니다.")
+                st.write(f"- 평균 불안장애 점수는 **[6]점** 입니다. 당신의 불안장애 점수는 **{Anx_score}점** 입니다.")
+                st.write(f"- 평균 자존감(낮음) 점수는 **[8]점** 입니다. 당신의 자존감(낮음) 점수는 **{Comp_score}점** 입니다.")
+                st.write(f"- 평균 우울증 점수는 **[10]점** 입니다. 당신의 우울증 점수는 **{Dep_score}점** 입니다.")
 
         elif y_pred == 2 :
-            st.warning('당신은 심각한 소셜미디어 중독이 의심됩니다.')
-            st.text(f"당신의 점수는 {total_score}점 입니다.") 
+            st.error('당신은 심각한 소셜미디어 중독이 의심됩니다.')
+            with st.expander('점수확인 및 평균 점수와 비교하기.'):
+                st.error(f"당신의 점수는 [60]점 만점 기준 {total_score}점 입니다.")
+                st.write(f"- 평균 ADHD 점수는 **[13]점** 입니다. 당신의 ADHD 점수는 **{Adhd_score}점** 입니다.")
+                st.write(f"- 평균 불안장애 점수는 **[6]점** 입니다. 당신의 불안장애 점수는 **{Anx_score}점** 입니다.")
+                st.write(f"- 평균 자존감(낮음) 점수는 **[8]점** 입니다. 당신의 자존감(낮음) 점수는 **{Comp_score}점** 입니다.")
+                st.write(f"- 평균 우울증 점수는 **[10]점** 입니다. 당신의 우울증 점수는 **{Dep_score}점** 입니다.")
 
 
 

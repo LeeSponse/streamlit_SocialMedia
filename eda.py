@@ -15,9 +15,9 @@ plt.rc('axes', unicode_minus=False) # 마이너스 폰트 설정
 
 def run_eda() :
     
-    st.subheader('탐색적 데이터 분석')
+    st.subheader('EDA 분석')
 
-    st.text('데이터프레임 보기 / 통계치 보기를 할 수 있습니다.')
+    st.write('**데이터프레임 및 통계치와 다양한 정보를 확인 할 수 있습니다.**')
 
     df = pd.read_csv('./data/SoCialMediaEDA.csv')
 
@@ -28,9 +28,13 @@ def run_eda() :
     choice_select = st.selectbox('원하시는 항목을 선택하세요.', select_menu)
 
     if choice_select == select_menu[0] :
+        st.write('- 최소 13세부터 최대 91세 까지의 소셜미디어 중독을 검사한 데이터입니다.')
+        st.write('- 4가지 점수를 기반으로 중독수준을 0(중독이 아님), 1(중독 의심), 2(중독) 으로 나누었습니다.')
+        st.write('- 또한 나이, 성별, 결혼여부, 직업, 사용시간이 소셜미디어 중독여부에 영향을 끼치는지 확인하였습니다.')
         st.dataframe(df)
 
     elif choice_select == select_menu[1] :
+        st.write('- 나이 및 각 점수의 **최소값,   평균값,   최대값,** 을 확인할 수 있습니다.')
         st.dataframe( df.describe() )
 
     elif choice_select == select_menu[2] :
@@ -213,8 +217,8 @@ def run_eda() :
             # 두 번째 서브플롯에 바차트 그리기 (파이차트와 동일한 색상 적용)
             mean_de.plot(kind='bar', ax=ax2, color=pie_colors)
             plt.xlabel('사용시간')
-            plt.ylabel('자존감(열등감) 점수')
-            ax2.set_title('평균 자존감(열등감) 점수')
+            plt.ylabel('우울증 점수')
+            ax2.set_title('평균 우울증 점수')
             st.pyplot(plt)
 
         

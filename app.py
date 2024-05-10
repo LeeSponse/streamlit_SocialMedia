@@ -3,8 +3,12 @@ import streamlit as st
 from home import run_home
 from eda import run_eda
 from ml import run_ml
+from tkinter.tix import COLUMN
+from pyparsing import empty
 
 def main() :
+
+    st.set_page_config(layout="wide")
 
 
     menu = ['메인페이지', ' EDA 분석 ', '정신건강 예측하기']
