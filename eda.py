@@ -5,6 +5,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import platform
 
+import platform
+import matplotlib.pyplot as plt
+from matplotlib import font_manager, rc
+plt.rcParams['axes.unicode_minus'] = False
+if platform.system() == 'Linux':
+    rc('font', family='NanumGothic')
+
 # 운영체제별 한글 폰트 설정
 if platform.system() == 'Darwin': # Mac 환경 폰트 설정
     plt.rc('font', family='AppleGothic')
