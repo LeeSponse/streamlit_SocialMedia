@@ -2,7 +2,7 @@ import streamlit as st
 import webbrowser
 
 def run_home() :
-        st.header('소셜미디어 중독은 심각한 질병입니다.')
+        st.header('소셜미디어 중독은 심각한 질병입니다!')
         st.write('##### 소셜미디어 사용시간에 따라 중독여부와 각종 정신건강에 미치는 영향을 예측하는 앱입니다.')
         st.image('./image/social.gif')
         st.write('- 소셜미디어 중독은 **ADHD,** **불안장애,** **자존감하락,** **우울증**에 영향을 끼칩니다.')
