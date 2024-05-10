@@ -447,6 +447,7 @@ def run_ml() :
         print(y_pred)
 
         if y_pred == 0 :
+            st.image('./image/good.gif')
             st.success('당신은 소셜미디어 중독이 아닙니다.')
             with st.expander('점수확인 및 평균 점수와 비교하기.'):
                 st.success(f"당신의 점수는 [60]점 만점 기준 {total_score}점 입니다.")
@@ -454,7 +455,7 @@ def run_ml() :
                 st.write(f"- 평균 불안장애 점수는 **[6]점** 입니다. 당신의 불안장애 점수는 **{Anx_score}점** 입니다.")
                 st.write(f"- 평균 자존감(낮음) 점수는 **[8]점** 입니다. 당신의 자존감(낮음) 점수는 **{Comp_score}점** 입니다.")
                 st.write(f"- 평균 우울증 점수는 **[10]점** 입니다. 당신의 우울증 점수는 **{Dep_score}점** 입니다.")
-            
+
         elif y_pred == 1 :
             st.warning('당신은 소셜미디어 중독이 의심됩니다.')
             with st.expander('점수확인 및 평균 점수와 비교하기.'):
